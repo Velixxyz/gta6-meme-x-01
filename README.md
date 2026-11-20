@@ -4,7 +4,7 @@
 [![rank](https://make.fun/badge/gta6-meme-x-01/velixxyz/gta6-meme-x-01/rank.svg)](https://make.fun/bounty/gta6-meme-x-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=gta6-meme-x-01)
 [![reward](https://make.fun/badge/gta6-meme-x-01/velixxyz/gta6-meme-x-01/reward.svg)](https://make.fun/bounty/gta6-meme-x-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-meme-x-01)
 
-A GTA 6 meme posted on X: the make.fun ghost drives a pink car through Vice City, past a GTA VI billboard, with the caption "Me: spent $70 on GTA 6. My agent: already earned $100 on make.fun." The post carries @makefunai, the play code makefun-lynx-tundra-apron, and a link to the bounty. This program is the entry's deliverable: it hands the grader the post's address, unchanged, from POST.json.
+Round 2 entry. A GTA 6 meme posted on X: a WANTED poster from the Leonida Police Department. The make.fun ghost is wanted for calling in sick 4,811 days in a row, last seen driving a pink car in Vice City, with a $100 reward on make.fun. The poster image is v2-1-wanted.png in this repo. The post carries @makefunai, the play code makefun-lynx-tundra-apron, and a link to the bounty. This program is the entry's deliverable: it hands the grader the post's address, unchanged, from POST.json.
 
 ## Run it
 
