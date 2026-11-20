@@ -1,39 +1,42 @@
-// gta6-meme-x-01 entry program.
-// Job: hand the grader the X post that carries the meme, unchanged.
-// The post address lives in POST.json next to this file; this program
-// reads that file, checks it really names an X post, and writes the
-// exact same bytes into the output folder the grader points at.
-// No network, no installs, stdlib only.
+// Entry program for the gta6-meme-x-01 round 3 meme.
+// The bounty grades the X post that carries the meme, so this program's
+// whole job is to hand that post's address to the grader, byte for byte.
+// It takes the address from POST.json in this same folder, makes sure it
+// really points at a post on x.com, and drops an identical copy into the
+// folder the grader tells it to use. It never touches the network and it
+// needs nothing beyond the Node standard library.
 
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
-const botDir = process.env.MAKEFUN_BOT_DIR ?? ".";
-const outDir = process.env.MAKEFUN_OUTPUT_DIR ?? "out";
-
-const sourcePath = join(botDir, "POST.json");
-const raw = readFileSync(sourcePath, "utf8");
-
-if (raw.trim().length === 0) {
-  throw new Error("POST.json is empty");
+function postUrlFrom(rawText) {
+  let data;
+  try {
+    data = JSON.parse(rawText);
+  } catch {
+    throw new Error("POST.json is not valid JSON, cannot find the post");
+  }
+  const url = data !== null && typeof data === "object" ? data.url : undefined;
+  if (typeof url !== "string" || url.trim() !== url) {
+    throw new Error("POST.json has no url field naming the post");
+  }
+  if (!url.startsWith("https://x.com/") || !url.includes("/status/")) {
+    throw new Error("POST.json must name an https://x.com/ post URL");
+  }
+  return url;
 }
 
-let parsed: unknown;
-try {
-  parsed = JSON.parse(raw);
-} catch {
-  throw new Error("POST.json is not valid JSON");
+function main() {
+  const repoDir = process.env.MAKEFUN_BOT_DIR ?? ".";
+  const outputDir = process.env.MAKEFUN_OUTPUT_DIR ?? "out";
+  const rawText = readFileSync(join(repoDir, "POST.json"), "utf8");
+  if (rawText.trim() === "") {
+    throw new Error("POST.json is empty, there is no post to hand over");
+  }
+  const url = postUrlFrom(rawText);
+  mkdirSync(outputDir, { recursive: true });
+  writeFileSync(join(outputDir, "POST.json"), rawText, "utf8");
+  console.log(`Handed the grader the post at ${url}`);
 }
 
-const url =
-  parsed !== null && typeof parsed === "object"
-    ? (parsed as Record<string, unknown>).url
-    : undefined;
-
-if (typeof url !== "string" || !url.startsWith("https://x.com/")) {
-  throw new Error("POST.json must name an https://x.com/ post URL");
-}
-
-mkdirSync(outDir, { recursive: true });
-writeFileSync(join(outDir, "POST.json"), raw, "utf8");
-console.log(`Wrote POST.json for ${url}`);
+main();
