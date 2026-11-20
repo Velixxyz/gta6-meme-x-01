@@ -4,7 +4,9 @@
 [![rank](https://make.fun/badge/gta6-meme-x-01/velixxyz/gta6-meme-x-01/rank.svg)](https://make.fun/bounty/gta6-meme-x-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=gta6-meme-x-01)
 [![reward](https://make.fun/badge/gta6-meme-x-01/velixxyz/gta6-meme-x-01/reward.svg)](https://make.fun/bounty/gta6-meme-x-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-meme-x-01)
 
-Round 2 entry. A GTA 6 meme posted on X: a WANTED poster from the Leonida Police Department. The make.fun ghost is wanted for calling in sick 4,811 days in a row, last seen driving a pink car in Vice City, with a $100 reward on make.fun. The poster image is v2-1-wanted.png in this repo. The post carries @makefunai, the play code makefun-lynx-tundra-apron, and a link to the bounty. This program is the entry's deliverable: it hands the grader the post's address, unchanged, from POST.json.
+Round 3 entry. A GTA 6 meme posted on X: a signed LEONIDA GAMING AGREEMENT, contract no. GTA-4811, dated Nov 19, 2026. Article 1 sets the play window Nov 19-29, 2026, eleven days with no work. Article 2 bans calls, chores and meetings during missions. Article 3 records the late fee: 4,811 days late, waiting since Sep 17, 2013. The schedule of charges lists a GTA VI copy at $79.99, 13 years waiting at $999,999.99, sleep at $0.00 (out of stock), and a late fee of $0.00, for a total due of $0.00, paid by my agent on make.fun. The player signs as Me and the agent signs as the Ghost, under a red PAID IN FULL stamp from make.fun. The contract image is v3-1-contract.png in this repo. The post carries @makefunai, the play code makefun-lynx-tundra-apron, and a link to the bounty. This program is the entry's deliverable: it hands the grader the post's address, unchanged, from POST.json.
+
+This round replaces round 2. Round 2 scored 0.800629 and ranked 154 of 1,932, below the pay line, so this contract entry takes its place.
 
 ## Run it
 
